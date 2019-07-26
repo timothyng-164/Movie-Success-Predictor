@@ -1,4 +1,4 @@
-﻿Classifying Movie Success  
+# ﻿Classifying Movie Success  
 Timothy Nguyen  
 Machine Learning Final Project - CS 483  
 ***See report.docx for a detailed explanation***
