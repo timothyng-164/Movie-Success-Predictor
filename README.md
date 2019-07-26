@@ -1,8 +1,7 @@
-﻿# Classifying Movie Success
-Timothy Nguyen
-Machine Learning Final Project - CS 483
+﻿Classifying Movie Success  
+Timothy Nguyen  
+Machine Learning Final Project - CS 483  
 ***See report.docx for a detailed explanation***
-----
 
 # Introduction
 In this project, I will be attempting to predict if a movie is successful. A movie’s success can be interpreted in various ways: number of awards, total revenue, and box office. But a basic guideline is that a movie is considered profitable if the revenue is twice the budget [1]. So, success will be a boolean feature that is true if the movie revenue exceeds twice the budget. I will be attempting to predict this value using several classification algorithms: logistic regression, K-nearest neighbors, decision tree, and random forest.
@@ -31,19 +30,19 @@ For the categorical predictors (genre, country, certification_US), dummy variabl
 For each algorithm, sklearn’s grid search is used to find the hyper-parameters with the best accuracy. The grid search also uses a k-fold cross-validation where k=10 to ensure that the entirety of the dataset is tested. The model accuracy is measured using the mean of the test scores from the cross-validation. The mean training score will also be shown to determine if the model is overfitted or underfitted
 
 # Conclusion
- 
+
 |    Algorithms               |    Mean   Test Score    |    Mean   Training Score    |    Hyper-parameters                                          |
 |-----------------------------|-------------------------|-----------------------------|--------------------------------------------------------------|
 |    Logistic   Regression    |    0.7047               |    0.7055                   |    solver:   newton-cg   C:   1000                           |
 |    KNN                      |    0.6557               |    0.7251                   |    n-neighbors: 11                                           |
 |    Decision   Tree          |    0.6581               |    0.7441                   |    criterion:   entropy,   max_depth:   6                    |
 |    Random   Forest          |    0.6735               |    0.7558                   |    criterion:   gini   n_estimators:   9   max_depth:   8    |
+
 The logistic regression algorithm yielded the best accuracy with a mean test score of 0.7047. It also has the lowest difference between mean test score and mean training score (0.0008), which means that it is fit neither overfitted nor underfitted.
 
 This score is good, but not ideal. It should be higher to be able to confidently predict a movie’s success. I could have used more classification algorithms, but there was not enough time. For example, using SVM took about a day to calculate, and that is not including hyper-parameter tuning. I could have also cleaned up the data better during preprocessing and possibly removed some outliers. But the final dataset was small enough as it is, so reducing it would make the dataset useless in generalizing all movies.
 
 # References
-[1] https://io9.gizmodo.com/5747305/how-much-money-does-a-movie-need-to-make-to-be-profitable
-[2] https://developers.themoviedb.org/3/getting-started/introduction
-[3] https://www.mpaa.org/film-ratings/
-
+[1] https://io9.gizmodo.com/5747305/how-much-money-does-a-movie-need-to-make-to-be-profitable  
+[2] https://developers.themoviedb.org/3/getting-started/introduction  
+[3] https://www.mpaa.org/film-ratings/  
